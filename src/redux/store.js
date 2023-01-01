@@ -1,0 +1,25 @@
+//REDUX CORE
+
+// eslint-disable-next-line no-unused-vars
+// import { createStore } from 'redux';
+// import rootReducer from './reducer';
+// import { composeWithDevTools } from 'redux-devtools-extension';
+
+// const composedEnhancers = composeWithDevTools();
+// const store = createStore(rootReducer, composedEnhancers);
+
+// export default store;
+
+//REDUX TOOLKIT
+import { configureStore } from '@reduxjs/toolkit';
+import { filtersSlice } from '../components/Filters/filtersSlice';
+import { todoSlice } from '../components/TodoList/todoSlice';
+
+const store = configureStore({
+    reducer: {
+        filter: filtersSlice.reducer,
+        todoList: todoSlice.reducer,
+    },
+});
+
+export default store;
